@@ -67,10 +67,6 @@ struct DetailView: View {
     
     var body: some View {
         VStack {
-            Text("You selected: \(selectedImage)")
-                .font(.largeTitle)
-                .padding()
-            
             // عرض الصورة المختارة
             Image(selectedImage)
                 .resizable()
@@ -87,4 +83,4 @@ struct DetailView: View {
 
 #Preview {
     Sara()
-    }
+}
