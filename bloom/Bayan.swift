@@ -1,25 +1,25 @@
 import SwiftUI
+
 struct Bayan: View {
     let categories = ["Our fits", "Shirts", "Jeans", "Dress"]
     var selectedImage: String? = nil
     @State private var showInfoSheet: Bool = false
     let images = ["ourfits_image", "shirts_image", "jeans_image", "dress_image"]
     @State private var selectedCategory: String? = "nil"
-    var selectedColor: Color?
-    var selectedOption: String?
-
+    
     let adaptiveColumn = [GridItem(.adaptive(minimum: 165), spacing: 20)]
-
+    
     var body: some View {
         NavigationView {
             ZStack {
                 VStack(spacing: 16) {
+                    
                     HStack(spacing: 20) {
                         ZStack {
                             RoundedRectangle(cornerRadius: 10)
                                 .fill(Color.gray.opacity(0.3))
                                 .frame(width: 165, height: 165)
-
+                            
                             if let selectedImage = selectedImage {
                                 Image(selectedImage)
                                     .resizable()
@@ -31,51 +31,62 @@ struct Bayan: View {
                                     .shadow(radius: 4, x: 0, y: 2)
                             }
                         }
-
+                        
                         VStack(spacing: 20) {
-                            Text("\(selectedOption ?? "None")")
+                            Text("Neture")
                                 .font(.largeTitle)
                                 .multilineTextAlignment(.leading)
                                 .font(.custom("American Typewriter", size: 18))
-
+                            
+                            // Color circles
                             HStack(spacing: -10) {
-                               
-                                    
-                                    if let color = selectedColor {
-                                                    Circle()
-                                                        .fill(color)
-                                                        .frame(width: 40, height: 40)
-                                                        .overlay(Circle().stroke(Color.gray, lineWidth: 2))
-                                                        .padding()
-                                                } else {
-                                                    Text("No color selected")
-                                                        .font(.headline)
-                                                }
-                                   
+                                Circle()
+                                    .fill(Color(red: 1.0, green: 0.9, blue: 0.85))
+                                    .frame(width: 40, height: 40)
+                                    .overlay(Circle().stroke(Color.gray))
+                                
+                                Circle()
+                                    .fill(Color(red: 0.95, green: 0.8, blue: 0.75))
+                                    .frame(width: 40, height: 40)
+                                    .overlay(Circle().stroke(Color.gray))
+                                
+                                Circle()
+                                    .fill(Color(red: 0.9, green: 0.7, blue: 0.65))
+                                    .frame(width: 40, height: 40)
+                                    .overlay(Circle().stroke(Color.gray))
+                                
+                                Circle()
+                                    .fill(Color(red: 0.8, green: 0.6, blue: 0.45))
+                                    .frame(width: 40, height: 40)
+                                    .overlay(Circle().stroke(Color.gray))
+                                
+                                Circle()
+                                    .fill(Color(red: 0.4, green: 0.25, blue: 0.2))
+                                    .frame(width: 40, height: 40)
+                                    .overlay(Circle().stroke(Color.gray))
                             }
                         }
-                        .padding(.horizontal)
-
-                        Divider()
                     }
+                    .padding(.horizontal)
                     
+                    Divider()
                     
                     // Category title
                     Text("Explore our categories")
                         .font(.custom("American Typewriter", size: 18))
                         .padding(.horizontal)
-
+                    
                     // Category grid
                     ScrollView {
                         LazyVGrid(columns: adaptiveColumn, spacing: 20) {
                             ForEach(0..<categories.count, id: \.self) { index in
                                 NavigationLink(destination: Sara()) {
                                     VStack {
-                                        Image(images[index]) // Adjust to the correct image
+                                        Image("ourfits_image")
                                             .resizable()
                                             .frame(width: 80, height: 140)
                                             .scaledToFit()
-
+                                        
                                         Text(categories[index]) // Display the correct category name
                                             .font(.custom("American Typewriter", size: 18))
                                             .foregroundColor(.black)
@@ -102,7 +113,7 @@ struct Bayan: View {
                         .edgesIgnoringSafeArea(.all)
                     
                     VStack {
-                        Spacer()
+                       Spacer()
                         
                         VStack {
                             Image("Info")
@@ -142,6 +153,7 @@ struct Bayan: View {
                     .transition(.move(edge: .bottom))
                 }
             }
+          // .navigationTitle(selectedCategory)
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button(action: {
