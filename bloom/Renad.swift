@@ -1,15 +1,9 @@
-//
-//  Nahed2.swift
-//  bloom
-//
-//  Created by Nahed Almutairi on 03/04/1446 AH.
-//
-
 import SwiftUI
 
 struct Renad: View {
     @State private var selectedCard: Int? = nil
-    
+    var selectedColor: Color?
+    var selectedOption: String?
     let bodyShapes = ["Round Shape", "Hourglass Shape", "Rectangle Shape", "Inverted Triangle Shape", "Pear Shape"]
     
     let bodyShapeImages = ["Round", "Hourglass", "Rectangle", "Inverted Tringle", "pear"]
@@ -57,7 +51,8 @@ struct Renad: View {
                         Spacer()
                         if let selectedCard = selectedCard {
                             
-                            NavigationLink(destination: Bayan(selectedImage: bodyShapeImages[selectedCard])) {
+                            NavigationLink(destination: Bayan(selectedImage: bodyShapeImages[selectedCard], selectedColor: selectedColor, selectedOption: selectedOption)) {
+
                                 Image(systemName: "arrow.right.circle.fill")
                                     .resizable()
                                     .frame(width: 50, height: 50)
@@ -68,11 +63,12 @@ struct Renad: View {
                         }
                     }
                 }
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .background(Color(red: 245/255, green: 245/255, blue: 247/255))
+                
                 .padding()
             }
             .navigationBarBackButtonHidden(false)
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(Color(red: 245/255, green: 245/255, blue: 247/255))
         }
     }
 }
