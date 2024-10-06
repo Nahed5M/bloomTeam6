@@ -1,6 +1,13 @@
 {
   "images" : [
     {
+      "filename" : "Screenshot 1446-03-30 at 5.01.54 PM 1.png",
+      "idiom" : "universal",
+      "platform" : "ios",
+      "size" : "1024x1024"
+    },
+    {
+      "filename" : "Screenshot 1446-03-30 at 5.01.54 PM.png",
       "idiom" : "universal",
       "platform" : "ios",
       "size" : "1024x1024"
