@@ -1,4 +1,3 @@
-
 import SwiftUI
 
 struct Sara: View {
@@ -15,7 +14,8 @@ struct Sara: View {
         CGSize(width: 180, height: 180),
         CGSize(width: 180, height: 180),
         CGSize(width: 200, height: 200),
-        CGSize(width: 150, height: 150) ]
+        CGSize(width: 150, height: 150)
+    ]
     
     var body: some View {
         NavigationView {
@@ -60,10 +60,6 @@ struct DetailView: View {
     
     var body: some View {
         VStack {
-            Text("You selected: \(selectedImage)")
-                .font(.largeTitle)
-                .padding()
-            
             // عرض الصورة المختارة
             Image(selectedImage)
                 .resizable()
@@ -72,7 +68,7 @@ struct DetailView: View {
                 .clipped()
                 .cornerRadius(20)
         }
-        .navigationTitle("Detail View")
+       
         .navigationBarTitleDisplayMode(.inline)
         .background(Color.white) // لون الخلفية لصفحة التفاصيل
     }

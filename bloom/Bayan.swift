@@ -39,20 +39,19 @@ struct Bayan: View {
                                 .multilineTextAlignment(.leading)
                             
                             HStack(spacing: -10) {
-                                
-                                
-                                if let color = selectedColor {
-                                    Circle()
-                                        .fill(color)
-                                        .frame(width: 40, height: 40)
-                                        .overlay(Circle().stroke(Color.gray, lineWidth: 2))
-                                        .padding()
+                               
                                     
-                                } else {
-                                    Text("No color selected")
-                                        .font(.headline)
-                                }
-                                
+                                    if let color = selectedColor {
+                                                    Circle()
+                                                        .fill(color)
+                                                        .frame(width: 40, height: 40)
+                                                        
+                                                        .padding()
+                                                } else {
+                                                    Text("No color selected")
+                                                        .font(.headline)
+                                                }
+                                   
                             }
                         }
                         
