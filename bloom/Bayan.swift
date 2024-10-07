@@ -1,10 +1,11 @@
 import SwiftUI
+
 struct Bayan: View {
     let categories = ["Our fits", "Tops", "Bottoms", "Dresses"]
     var selectedImage: String? = nil
     @State private var showInfoSheet: Bool = false
-    let images = ["Ourfits_image", "Tops_image", "Bottoms_image", "Dresses_image"]
-    @State private var selectedCategory: String? = "nil"
+    let images = ["ourfits_image", "tops_image", "bottoms_image", "dresses_image"] // Adjust the image names accordingly
+    @State private var selectedCategory: String? = nil // Initialize as nil
     var selectedColor: Color?
     var selectedOption: String?
 
@@ -23,7 +24,6 @@ struct Bayan: View {
                             if let selectedImage = selectedImage {
                                 Image(selectedImage)
                                     .resizable()
-                                    .frame(width: 80, height: 150)
                                     .scaledToFit()
                                     .frame(width: 165, height: 165)
                                     .background(Color.white)
@@ -39,27 +39,21 @@ struct Bayan: View {
                                 .multilineTextAlignment(.leading)
                             
                             HStack(spacing: -10) {
-                               
-                                    
-                                    if let color = selectedColor {
-                                                    Circle()
-                                                        .fill(color)
-                                                        .frame(width: 40, height: 40)
-                                                        
-                                                        .padding()
-                                                } else {
-                                                    Text("No color selected")
-                                                        .font(.headline)
-                                                }
-                                   
+                                if let color = selectedColor {
+                                    Circle()
+                                        .fill(color)
+                                        .frame(width: 40, height: 40)
+                                        .padding()
+                                } else {
+                                    Text("No color selected")
+                                        .font(.headline)
+                                }
                             }
                         }
-                        
                     }
                     .padding(.horizontal)
-                     Divider()
-                                  
-                  
+                    
+                    Divider()
                     
                     // Category title
                     Text("Explore our categories")
@@ -70,9 +64,9 @@ struct Bayan: View {
                     ScrollView {
                         LazyVGrid(columns: adaptiveColumn, spacing: 20) {
                             ForEach(0..<categories.count, id: \.self) { index in
-                                NavigationLink(destination: Sara()) {
+                                NavigationLink(destination: Sara(selectedCategory: categories[index])) { // Pass the selected category
                                     VStack {
-                                        Image(images[index]) // Adjust to the correct image
+                                        Image(images[index]) // Use the correct image names
                                             .resizable()
                                             .frame(width: 80, height: 140)
                                             .scaledToFit()
@@ -86,8 +80,6 @@ struct Bayan: View {
                                     .cornerRadius(10)
                                     .shadow(radius: 4, x: 0, y: 2)
                                 }
-                    
-                                
                             }
                         }
                         .padding()
@@ -164,6 +156,7 @@ struct Bayan: View {
 
 struct Bayan_Previews: PreviewProvider {
     static var previews: some View {
-        Bayan(selectedImage: "ourfits_image")
+        Bayan()
     }
 }
+ 
