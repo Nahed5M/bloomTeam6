@@ -1,4 +1,3 @@
-
 import SwiftUI
 
 struct Renad1Nahed: View {
@@ -14,7 +13,7 @@ struct Renad1Nahed: View {
     @State private var showAlert = false
     @State private var navigateToNextPage = false
     
-    
+    // Computed property to get the currently selected color
     var selectedColor: Color? {
         switch selectedOption {
         case "Nature":
@@ -81,7 +80,7 @@ struct Renad1Nahed: View {
                     .font(.custom("American Typewriter", size: 28)).bold()
                     .multilineTextAlignment(.center)
 
-                
+                // Undertone options
                 VStack(spacing: 15) {
                     UndertoneOption(
                         label: "Nature",
@@ -152,7 +151,7 @@ struct Renad1Nahed: View {
                 }
                 .alert(isPresented: $showAlert) {
                     Alert(title: Text("Attention"),
-                          message: Text("Please select a skon color before proceeding."),
+                          message: Text("Please select a circle before proceeding."),
                           dismissButton: .default(Text("OK")))
                 }
             }
