@@ -1,9 +1,9 @@
 import SwiftUI
 struct Bayan: View {
-    let categories = ["Our fits", "Shirts", "Jeans", "Dress"]
+    let categories = ["Our fits", "Tops", "Bottoms", "Dresses"]
     var selectedImage: String? = nil
     @State private var showInfoSheet: Bool = false
-    let images = ["ourfits_image", "shirts_image", "jeans_image", "dress_image"]
+    let images = ["Ourfits_image", "Tops_image", "Bottoms_image", "Dresses_image"]
     @State private var selectedCategory: String? = "nil"
     var selectedColor: Color?
     var selectedOption: String?
@@ -34,7 +34,7 @@ struct Bayan: View {
 
                         VStack(spacing: 20) {
                             Text("\(selectedOption ?? "None")")
-                                .font(.custom("American Typewriter", size: 18))
+                                .font(.custom("American Typewriter", size: 40))
                                 .font(.largeTitle)
                                 .multilineTextAlignment(.leading)
                             
