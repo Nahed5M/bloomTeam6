@@ -45,7 +45,7 @@ struct Bayan: View {
                                                     Circle()
                                                         .fill(color)
                                                         .frame(width: 40, height: 40)
-                                                        .overlay(Circle().stroke(Color.gray, lineWidth: 2))
+                                                        
                                                         .padding()
                                                 } else {
                                                     Text("No color selected")
