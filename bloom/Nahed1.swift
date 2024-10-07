@@ -19,7 +19,7 @@ struct Nahed1: View {
                     .frame(height: 400)
                     .padding(.top, 150)
                 
-              Text("Discover your style!")
+              Text("Let’s make your fashion !")
                     .font(.title2)
                     .multilineTextAlignment(.center)
                     .padding(.top, 30)
@@ -41,6 +41,7 @@ struct Nahed1: View {
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color(red: 245/255, green: 245/255, blue: 247/255))
+         
         }
     }
 }
