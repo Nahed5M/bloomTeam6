@@ -34,31 +34,33 @@ struct Bayan: View {
 
                         VStack(spacing: 20) {
                             Text("\(selectedOption ?? "None")")
+                                .font(.custom("American Typewriter", size: 18))
                                 .font(.largeTitle)
                                 .multilineTextAlignment(.leading)
-                                .font(.custom("American Typewriter", size: 18))
-
+                            
                             HStack(spacing: -10) {
-                               
+                                
+                                
+                                if let color = selectedColor {
+                                    Circle()
+                                        .fill(color)
+                                        .frame(width: 40, height: 40)
+                                        .overlay(Circle().stroke(Color.gray, lineWidth: 2))
+                                        .padding()
                                     
-                                    if let color = selectedColor {
-                                                    Circle()
-                                                        .fill(color)
-                                                        .frame(width: 40, height: 40)
-                                                        .overlay(Circle().stroke(Color.gray, lineWidth: 2))
-                                                        .padding()
-                                                } else {
-                                                    Text("No color selected")
-                                                        .font(.headline)
-                                                }
-                                   
+                                } else {
+                                    Text("No color selected")
+                                        .font(.headline)
+                                }
+                                
                             }
                         }
-                        .padding(.horizontal)
-
-                        Divider()
+                        
                     }
-                    
+                    .padding(.horizontal)
+                     Divider()
+                                  
+                  
                     
                     // Category title
                     Text("Explore our categories")
@@ -85,9 +87,8 @@ struct Bayan: View {
                                     .cornerRadius(10)
                                     .shadow(radius: 4, x: 0, y: 2)
                                 }
-                                .simultaneousGesture(TapGesture().onEnded {
-                                    selectedCategory = categories[index]
-                                })
+                    
+                                
                             }
                         }
                         .padding()

@@ -34,6 +34,7 @@ struct Nahed1: View {
                             .frame(width: 50, height: 50)
                             .foregroundColor(.black)
                     }
+                
                     .padding(.bottom, 30)
                     .padding(.trailing, 20)
                 }
